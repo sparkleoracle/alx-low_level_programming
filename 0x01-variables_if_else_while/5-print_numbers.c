@@ -2,22 +2,20 @@
 
 
 /**
- * main - program that prints the alphabet in lowercase and upper case
+ * main - prin numbers of base ten
  *
- * Return: Always 0.
+ * Return: always (0)
  */
 
 int main(void)
 {
-	char letter;
+	char base_ten = '0';
 
-	for (letter = 'a'; letter <= 'z'; letter++)
-
+	while (base_ten <= '9')
 	{
-	if (letter != 'e' && letter != 'q')
-	putchar(letter);
+	putchar(base_ten);
+	base_ten++;
 	}
-
 	putchar('\n');
 
 	return (0);

@@ -1,23 +1,29 @@
 #include <stdio.h>
+
 /**
-  * main - the main printing funtion
-  * less than 4million
-  * Return: (0)
-  */
+ * main - Printing the main function
+ *        terms not exceeding 4million
+ *
+ * Return: Always 0.
+ */
 int main(void)
 {
-	long int i, x = 1, y = 2, sum = 0, tsum = 0;
+	unsigned long fib1 = 0, fib2 = 1, fibsum;
+	float tot_sum;
 
-	for (i = 0; i < 49; i++)
+	while (1)
 	{
-		if ((y % 2 == 0) && (y <= 4000000))
-			{
-				tsum = tsum + y;
-			}
-		sum = x + y;
-		x = y;
-		y = sum;
+		fibsum = fib1 + fib2;
+		if (fibsum > 4000000)
+			break;
+
+		if ((fibsum % 2) == 0)
+			tot_sum += fibsum;
+
+		fib1 = fib2;
+		fib2 = fibsum;
 	}
-printf("%ld\n", tsum)
+	printf("%.0f\n", tot_sum);
+
 	return (0);
 }

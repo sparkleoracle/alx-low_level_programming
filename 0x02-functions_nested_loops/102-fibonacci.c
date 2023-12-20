@@ -1,32 +1,29 @@
 #include <stdio.h>
 
-
 /**
-  * main - prints the first 52 fib
-  * Return: 0.
-  */
-
-
+ * main - Printing the main function
+ *        less than 4million
+ *
+ * Return: Always 0.
+ */
 int main(void)
 {
-	int i = 0;
-	long j = 1, k = 2;
+	unsigned long fib1 = 0, fib2 = 1, fibsum;
+	float tot_sum;
 
+	while (1)
+	{
+		fibsum = fib1 + fib2;
+		if (fibsum > 4000000)
+			break;
 
-	while (i < 50)
-	{
-	if (i == 0)
-	printf("%ld", j);
-	else if (i == 1)
-	printf(", %ld", k);
-	else
-	{
-	k += j;
-	j = k - j;
-	printf(", %ld", k);
+		if ((fibsum % 2) == 0)
+			tot_sum += fibsum;
+
+		fib1 = fib2;
+		fib2 = fibsum;
 	}
-	++i;
-	}
-	printf("\n");
+	printf("%.0f\n", tot_sum);
+
 	return (0);
 }

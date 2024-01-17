@@ -10,37 +10,37 @@
  */
 int main(int argc, char *argv[])
 {
-	int i;
-	int j;
-	int c;
-	int sum;
-	char *s;
+	int a;
+	int b;
+	int d;
+	int num;
+	char *p;
 
-	sum = 0;
-	c = 0;
+	num = 0;
+	d = 0;
 
-	i = 1;
-	while (i < argc)
+	a = 1;
+	while (a < argc)
 	{
-		s = argv[i];
-		j = 0;
-		while (s[j] != '\0')
+		p = argv[a];
+		b = 0;
+		while (p[b] != '\0')
 		{
-			if (s[j] < '0' || s[j] > '9')
+			if (p[b] < '0' || p[b] > '9')
 			{
 				printf("Error\n");
 				return (1);
 			}
-			j++;
+			b++;
 		}
-		i++;
+		a++;
 	}
 
-	for (i = 1; i < argc; i++)
+	for (a = 1; a < argc; a++)
 	{
-		c = atoi(argv[i]);
-		sum = sum + c;
+		d = atoi(argv[a]);
+		num = num + d;
 	}
-	printf("%d\n", sum);
+	printf("%d\n", num);
 	return (0);
 }
